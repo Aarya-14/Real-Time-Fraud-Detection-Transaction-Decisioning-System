@@ -301,13 +301,3 @@ streamlit run app.py
 
 Use the UI as a checkout-like transaction simulator.
 
-
-### Future Extensions
-
-Add real online feature store using Redis or a database.
-
-Add automated monitoring dashboard based on logs/decisions.jsonl.
-
-Add scheduled retraining based on new labeled data.
-
-Expose batch scoring for backfills.
