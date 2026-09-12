@@ -1,1 +1,29 @@
+# dockerignore
+# 1. Project-wide exclusions (large or temporary files)
+__pycache__
+*.pyc
+venv/
+.git
+.gitignore
+.DS_Store
+.env
+.env.*
+dist
+build
+.pytest_cache
+*.log
+
+# 2. ML/Data exclusions (often the largest directories)
+data/
+mlruns/
+notebooks/
+
+# 3. Backend Source Code Exclusion (CRITICAL for frontend build)
+# This excludes the FastAPI source code while keeping the Streamlit app (which is in /frontend)
+#src/
+
+# 4. Optional: If you plan to build a Next.js (Node.js) frontend later
+# node_modules/
+
+
 
