@@ -1,0 +1,21 @@
+# Use a minimal Python base image
+FROM python:3.11-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Install dependencies (requires Streamlit, requests, pytz)
+# NOTE: Ensure you have a requirements.txt file in the project root.
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the Streamlit application code from the 'frontend' subdirectory
+# The Streamlit file will be copied into the root of the WORKDIR (/app/app.py)
+COPY frontend/app.py .
+
+# Standard Cloud Run port
+EXPOSE 8080
+
+# Command to run the Streamlit application
+# We use the dynamic $PORT provided by Cloud Run and run it in headless mode.
+CMD ["streamlit", "run", "app.py", "--server.port", "8080", "--server.enableCORS", "false", "--server.headless", "true"]
