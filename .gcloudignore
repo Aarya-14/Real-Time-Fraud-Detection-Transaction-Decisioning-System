@@ -1,0 +1,27 @@
+﻿.git/
+.gitignore
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+env/
+.pytest_cache/
+*.egg-info/
+.Python
+.ipynb_checkpoints/
+.vscode/
+.idea/
+data/raw/
+data/external/
+*.csv
+*.xlsx
+*.parquet
+*.feather
+*.log
+logs/
+mlruns/
+notebooks/*.ipynb
+output.png
+reports/
+# DO NOT EXCLUDE requirements.txt or Dockerfile!
